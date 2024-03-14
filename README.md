@@ -1,2 +1,2 @@
 # PyReLA
-A Python library implementing popular RL, DRL, and MARL Algorithms to provide quicker performance evaluation.
+A Python library implementing popular RL, and DRL Algorithms to provide quicker performance evaluation.
