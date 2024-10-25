@@ -3,8 +3,7 @@ import gymnasium as gym
 import matplotlib.pyplot as plt
 import numpy as np
 
-from dqn import *
-import dqn
+from dqn import DQN, ReplayBuffer, DQNAgent
 import trainer
 
 def main():
@@ -14,7 +13,7 @@ def main():
     action_dim = env.action_space.n
     episode_term = 1000
     # Create the DQN agent
-    agent = dqn.DQNAgent(state_dim, action_dim)
+    agent = DQNAgent(state_dim, action_dim)
 
     # Train the agent
     rewards = trainer.train_dqn_agent(env, agent, episode_term)
@@ -32,8 +31,8 @@ def main():
 
     plt.legend()
 
-    #plt.grid(True)
-    plt.savefig('dqn_rewards_300.png')
+    plt.grid(True)
+    plt.savefig(f'dqn_rewards_{episode_term}.png')
     plt.show()
 
 if __name__ == "__main__":
